@@ -31,6 +31,8 @@ set nobackup
 set noswapfile
 set nowrap
 
+"" CMP config
+set completeopt=menu,menuone,noselect
 
 "" Searching
 set hlsearch

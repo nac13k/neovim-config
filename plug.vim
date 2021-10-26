@@ -17,9 +17,16 @@ Plug 'romainl/vim-cool'
 "" Add nvim comment (easy comment)
 Plug 'terrortylor/nvim-comment'
 "" Add completion to nvim (lua autocompletion)
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
 "" Add buffer as source to completion plugin
-Plug 'steelsojka/completion-buffers'
+" Plug 'steelsojka/completion-buffers'
+"" Add cmp to nvim for autocompletion
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+"" Cmp plugins for ultisnips users.
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 "" Ultisnipets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
