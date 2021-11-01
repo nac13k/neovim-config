@@ -8,7 +8,11 @@ Plug 'neovim/nvim-lspconfig'
 "" Easy instalation for LSP
 Plug 'kabouzeid/nvim-lspinstall'
 "" Beuatyfull UI for LSP
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
+" lspsaga parchado
+Plug 'rinx/lspsaga.nvim'
+"" LightBulb
+" Plug 'kosayoda/nvim-lightbulb'
 "" Add commong syntax highlight with treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "" Add vim-cool to remove highlight after finish search and press any key to
@@ -25,6 +29,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
 "" Cmp plugins for ultisnips users.
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 "" Ultisnipets
