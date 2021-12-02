@@ -50,7 +50,7 @@ lua <<EOF
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
       ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<CR>'] = cmp.mapping.confirm({ select = false }),
     },
     formatting = {
       format = lspkind.cmp_format({with_text = false, maxwidth = 50})
@@ -59,20 +59,54 @@ lua <<EOF
       { name = 'nvim_lsp' },
       { name = 'ultisnips' }, -- For ultisnips users.
     }, {
-      { name = 'buffer' },
+      -- { name = 'buffer' },
     })
   })
 
-
-  require'lspinstall'.setup() -- important
-
-  local servers = require'lspinstall'.installed_servers()
+  local lsp_installer = require("nvim-lsp-installer")
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-  for _, server in pairs(servers) do
-    require('lspconfig')[server].setup {
+  lsp_installer.on_server_ready(function(server)
+    local opts = {
       capabilities = capabilities,
       on_attach = on_attach,
       }
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
+    server:setup(opts)
+  end)
+
+
+  -- local servers = require'lspinstall'.installed_servers()
+  local servers = { 'solargraph', 'angularls', 'tsserver', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
+
+  local lsp_installer_servers = require'nvim-lsp-installer.servers'
+
+  for _, server_name in ipairs(servers) do
+    local ok, server = lsp_installer_servers.get_server(server_name)
+    if ok then
+      if not server:is_installed() then
+        server:install()
+      end
+    end
   end
 EOF
+
+  " require'lspinstall'.setup() -- important
+  " local ok, rust_analyzer = lsp_installer_servers.get_server("rust_analyzer")
+  " if ok then
+  "   if not rust_analyzer:is_installed() then
+  "     rust_analyzer:install()
+  "   end
+  " end
+  " for _, server in pairs(servers) do
+  "   require('lspconfig')[server].setup {
+  "     capabilities = capabilities,
+  "     on_attach = on_attach,
+  "     }
+  " end

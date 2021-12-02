@@ -8,11 +8,15 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   indent = {
-    enable = false,
+    enable = true,
     disable = {},
+  },
+  incremental_selection = {
+    enable = false,
   },
   ensure_installed = {
     "tsx",
+    "javascript",
     "json",
     "yaml",
     "html",

@@ -6,7 +6,7 @@
 """
 Plug 'neovim/nvim-lspconfig'
 "" Easy instalation for LSP
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 "" Beuatyfull UI for LSP
 " Plug 'glepnir/lspsaga.nvim'
 " lspsaga parchado
@@ -64,9 +64,10 @@ Plug 'f-person/git-blame.nvim'
 "" Themes and ui improves
 """
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 """
 "" Plugins for lang
 """
-
 Plug 'ray-x/go.nvim'
+" Plug 'maxmellon/vim-jsx-pretty'
