@@ -38,6 +38,7 @@ Plug 'honza/vim-snippets'
 "" Fuzzy finder wioth telecsope plugins
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'windwp/nvim-spectre'
 Plug 'nvim-telescope/telescope.nvim'
 "" Icons
 Plug 'kyazdani42/nvim-web-devicons'

@@ -118,7 +118,7 @@ require'nvim-tree'.setup {
     }
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = { '.git', 'node_modules', '.cache' },
   },
   git = {
