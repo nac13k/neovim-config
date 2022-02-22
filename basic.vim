@@ -55,4 +55,4 @@ let g:indentLine_faster = 1
 
 "" Show invisible chars
 set listchars=eol:☠,space:⠿,tab:▸␣,trail:~,extends:>,precedes:<,nbsp:█
-set list
+" set list " Uncomment to set default show invisible

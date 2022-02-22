@@ -9,8 +9,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 "" Beuatyfull UI for LSP
 " Plug 'glepnir/lspsaga.nvim'
+Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0'}
 " lspsaga parchado
-Plug 'rinx/lspsaga.nvim'
+" Plug 'rinx/lspsaga.nvim'
 "" LightBulb
 " Plug 'kosayoda/nvim-lightbulb'
 "" Add commong syntax highlight with treesitter
@@ -56,6 +57,9 @@ Plug 'caenrique/nvim-toggle-terminal'
 Plug 'beauwilliams/focus.nvim'
 "" DBML syntax support
 Plug 'jidn/vim-dbml'
+"" Markdown
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 """
 "" Git plugins
 """

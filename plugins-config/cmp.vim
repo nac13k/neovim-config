@@ -75,6 +75,28 @@ lua <<EOF
     -- if server.name == "tsserver" then
     --     opts.root_dir = function() ... end
     -- end
+    if server.name == "solargraph" then
+      opts.settings = {
+        solargraph = {
+          autoformat  = false,
+          bundlerPath = "bundle",
+          checkGemVersion =  true,
+          commandPath = "solargraph",
+          completion  = true,
+          definitions = true,
+          diagnostics = true,
+          folding    = true,
+          formatting = false,
+          hover      =  true,
+          logLevel   = "warn",
+          references = true,
+          rename     =  true,
+          symbols    = true,
+          transport  = "socket",
+          useBundler = true,
+          }
+        }
+    end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
@@ -83,7 +105,8 @@ lua <<EOF
 
 
   -- local servers = require'lspinstall'.installed_servers()
-  local servers = { 'solargraph', 'angularls', 'tsserver', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
+  -- local servers = { 'solargraph', 'angularls', 'eslint', 'tsserver', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
+  local servers = { 'solargraph', 'angularls', 'eslint', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
 
   local lsp_installer_servers = require'nvim-lsp-installer.servers'
 

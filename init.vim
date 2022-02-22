@@ -19,8 +19,14 @@ call plug#end()
 
 """
 "" Load coloscheme configuration
+"""
+" source $HOME/.config/nvim/themes-config/gruvbox.vim
+source $HOME/.config/nvim/themes-config/molokai.vim
+
+"""
+"" Load macos custom configuration and common macros
 """
-source $HOME/.config/nvim/themes-config/gruvbox.vim
+source $HOME/.config/nvim/macos.vim
 
 """
 "" Load all configured servers from folder serves
