@@ -5,32 +5,32 @@ lua <<EOF
   local cmp = require'cmp'
   local lspkind = require('lspkind')
 
-  local on_attach = function(_, bufnrcc)
-    local function buf_set_keymap(...) 
-      vim.api.nvim_buf_set_keymap(bufnr, ...)
+  local on_attach = function(client, bufnr)
+    local function buf_set_keymap(mode, key, cmd)
+      vim.api.nvim_buf_set_keymap(bufnr, mode, key, cmd, {noremap = true, silent = true})
     end
-    local opts = { noremap = true, silent = true }
+    -- local opts = { noremap = true, silent = true }
 
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<leader>hh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+    buf_set_keymap('n', '<leader>hh', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     -- buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     -- buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     -- buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
     -- buf_set_keymap((bufnr, 'v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
-    buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    buf_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+    buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+    buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+    buf_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]])
 
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
   end
@@ -75,28 +75,6 @@ lua <<EOF
     -- if server.name == "tsserver" then
     --     opts.root_dir = function() ... end
     -- end
-    if server.name == "solargraph" then
-      opts.settings = {
-        solargraph = {
-          autoformat  = false,
-          bundlerPath = "bundle",
-          checkGemVersion =  true,
-          commandPath = "solargraph",
-          completion  = true,
-          definitions = true,
-          diagnostics = true,
-          folding    = true,
-          formatting = false,
-          hover      =  true,
-          logLevel   = "warn",
-          references = true,
-          rename     =  true,
-          symbols    = true,
-          transport  = "socket",
-          useBundler = true,
-          }
-        }
-    end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
@@ -106,7 +84,7 @@ lua <<EOF
 
   -- local servers = require'lspinstall'.installed_servers()
   -- local servers = { 'solargraph', 'angularls', 'eslint', 'tsserver', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
-  local servers = { 'solargraph', 'angularls', 'eslint', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'sumneko_lua', 'pyright', 'sqlls', }
+  local servers = { 'solargraph', 'angularls', 'eslint', 'vimls', 'gopls', 'graphql', 'jsonls', 'dockerls', 'bashls', 'html', 'pyright', 'sqlls', }
 
   local lsp_installer_servers = require'nvim-lsp-installer.servers'
 

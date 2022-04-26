@@ -22,6 +22,7 @@ call plug#end()
 """
 " source $HOME/.config/nvim/themes-config/gruvbox.vim
 source $HOME/.config/nvim/themes-config/molokai.vim
+" source $HOME/.config/nvim/themes-config/purify.vim
 
 """
 "" Load macos custom configuration and common macros

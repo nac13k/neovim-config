@@ -4,9 +4,6 @@
 "" It lets Neovim behave more like IDE. To configure each LSP(Lenguage Server
 "" Protocol) please read => https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 """
-Plug 'neovim/nvim-lspconfig'
-"" Easy instalation for LSP
-Plug 'williamboman/nvim-lsp-installer'
 "" Beuatyfull UI for LSP
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0'}
@@ -27,6 +24,8 @@ Plug 'terrortylor/nvim-comment'
 " Plug 'steelsojka/completion-buffers'
 "" Add cmp to nvim for autocompletion
 Plug 'neovim/nvim-lspconfig'
+"" Easy instalation for LSP
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
@@ -70,9 +69,18 @@ Plug 'f-person/git-blame.nvim'
 """
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+"""
+"" Github Copilot
+"""
+Plug 'github/copilot.vim'
 
 """
 "" Plugins for lang
 """
 Plug 'ray-x/go.nvim'
+"" Enable debugger and a better ui
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 " Plug 'maxmellon/vim-jsx-pretty'
