@@ -70,6 +70,7 @@ Plug 'f-person/git-blame.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'srcery-colors/srcery-vim'
 
 """
 "" Github Copilot
