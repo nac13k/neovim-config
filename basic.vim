@@ -2,6 +2,8 @@
 set number
 set mouse=a
 set numberwidth=1
+" set winheight=1
+" set sessionoptions+=resize 
 "" syntax enable
 set showcmd
 set ruler

@@ -3,20 +3,16 @@
 """
 
 lua << EOF
-local status, lualine = pcall(require, "lualine")
-if (not status) then return end
-
-lualine.setup {
+require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
-    section_separators = {'', ''},
-    component_separators = {'', ''},
-    disabled_filetypes = {}
+    theme = "tokyonight",
+    disabled_filetypes = {},
+    always_divide_middle = true,
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_b = {'branch','diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {
       { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
@@ -35,6 +31,8 @@ lualine.setup {
     lualine_z = {}
   },
   tabline = {},
+  winbar = {},
+  inactive_winbar = {},
   extensions = {'fugitive'}
 }
 EOF

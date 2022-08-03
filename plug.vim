@@ -71,6 +71,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'srcery-colors/srcery-vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 """
 "" Github Copilot
@@ -85,3 +86,8 @@ Plug 'ray-x/go.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 " Plug 'maxmellon/vim-jsx-pretty'
+
+"""
+"" Navigation plugins
+"""
+Plug 'phaazon/hop.nvim'

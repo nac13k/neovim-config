@@ -21,9 +21,10 @@ call plug#end()
 "" Load coloscheme configuration
 """
 " source $HOME/.config/nvim/themes-config/gruvbox.vim
-source $HOME/.config/nvim/themes-config/srcery.vim
+" source $HOME/.config/nvim/themes-config/srcery.vim
 " source $HOME/.config/nvim/themes-config/molokai.vim
 " source $HOME/.config/nvim/themes-config/purify.vim
+source $HOME/.config/nvim/themes-config/tokyonight.vim
 
 """
 "" Load macos custom configuration and common macros
