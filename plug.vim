@@ -5,12 +5,7 @@
 "" Protocol) please read => https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 """
 "" Beuatyfull UI for LSP
-" Plug 'glepnir/lspsaga.nvim'
-Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0'}
-" lspsaga parchado
-" Plug 'rinx/lspsaga.nvim'
-"" LightBulb
-" Plug 'kosayoda/nvim-lightbulb'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "" Add commong syntax highlight with treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "" Add vim-cool to remove highlight after finish search and press any key to
@@ -18,10 +13,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romainl/vim-cool'
 "" Add nvim comment (easy comment)
 Plug 'terrortylor/nvim-comment'
-"" Add completion to nvim (lua autocompletion)
-" Plug 'nvim-lua/completion-nvim'
-"" Add buffer as source to completion plugin
-" Plug 'steelsojka/completion-buffers'
 "" Add cmp to nvim for autocompletion
 Plug 'neovim/nvim-lspconfig'
 "" Easy instalation for LSP

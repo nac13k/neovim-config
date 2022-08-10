@@ -91,7 +91,4 @@ let g:mkdp_filetypes = ['markdown']
 
 
 """ Key Mapping
-
-" nmap <C-s> <Plug>MarkdownPreview
-" nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-s> <Plug>MarkdownPreviewToggle
