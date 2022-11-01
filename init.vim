@@ -28,19 +28,12 @@ source $HOME/.config/nvim/themes-config/tokyonight.vim
 
 """
 "" Load macos custom configuration and common macros
-"""
+"""
 source $HOME/.config/nvim/macos.vim
-
-"""
-"" Load all configured servers from folder serves
-"""
-for server in split(glob('$HOME/.config/nvim/servers/*.vim'), '\n')
-  exe 'source' server
-endfor
 
 """
 "" Load all plugin configuration from plugin-config
 """
-for server in split(glob('$HOME/.config/nvim/plugins-config/*.vim'), '\n')
-  exe 'source' server
+for plugin_config in split(glob('$HOME/.config/nvim/plugins-config/*.vim'), '\n')
+  exe 'source' plugin_config
 endfor

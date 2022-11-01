@@ -73,6 +73,7 @@ Plug 'github/copilot.vim'
 "" Plugins for lang
 """
 Plug 'ray-x/go.nvim'
+Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make'}
 "" Enable debugger and a better ui
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
