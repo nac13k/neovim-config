@@ -32,3 +32,24 @@ npm install -g neovim
 # fd Read more in: https://github.com/sharkdp/fd#installation
 brew install fd ripgrep
 ```
+
+### Usefull commands
+
+Treesitter
+
+```sh
+# install language syntax highlighting
+:TSInstall <lang>
+```
+
+```sh
+# List language syntax highlighting availables
+:TSInstallInfo
+```
+
+Language servers
+
+```sh
+# Show Language server manager, here you can update, install and remove many language servers
+:LSPInstallInfo
+```
